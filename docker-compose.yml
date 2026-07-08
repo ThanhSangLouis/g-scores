@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: g-scores-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: g_scores
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - g_scores_pg_data:/var/lib/postgresql/data
+
+volumes:
+  g_scores_pg_data:

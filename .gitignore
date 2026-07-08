@@ -1,0 +1,19 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+coverage/
+.DS_Store
+*.tsbuildinfo
+docs/superpowers/
+backend/prisma/migrations/dev.db*
+
+# Agent harness files
+AGENTS.md
+feature_list.json
+progress.md
+session-handoff.md
+init.sh
+init.ps1
+

@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: g-scores-api
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build --workspace backend
+    preDeployCommand: npm run db:deploy --workspace backend
+    startCommand: npm run start --workspace backend
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_URL_DIRECT
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
